@@ -31,11 +31,11 @@ namespace MobileFinalProjectServer
            // services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);           
             services.AddControllersWithViews();
             var connString = Configuration.GetConnectionString("project_connString");
-
             services.AddDbContext<MyDbContext>(
                 options => options.UseSqlServer(connString));
-
             services.AddScoped<UserRepository, UserRepository>();
+            services.AddScoped<TaskRepository, TaskRepository>();
+         
 
         }
 

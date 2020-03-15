@@ -15,7 +15,7 @@ namespace MobileFinalProjectServer.Repositories
 
         public User checkLogin(string username, string password)
         {
-           User user =  _context.Users.Where(u => u.Username == username && u.Password == password).Select(u => new User {Username = u.Username, Role = u.Role, GroupId = u.GroupId, Status = u.Status, Phone = u.Phone, Id = u.Id}).SingleOrDefault();
+           User user =  _context.Users.Where(u => u.Username == username && u.Password == password).Select(u => new User {Username = u.Username, Role = u.Role, GroupId = u.GroupId, Status = u.Status, Phone = u.Phone, Id = u.Id, Name = u.Name}).SingleOrDefault();
            return user;
         }
     }
